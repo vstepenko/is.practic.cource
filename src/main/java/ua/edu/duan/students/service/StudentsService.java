@@ -4,7 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ua.edu.duan.students.dto.StudentDto;
+import ua.edu.duan.dto.StudentDto;
 import ua.edu.duan.students.entity.StudentEntity;
 import ua.edu.duan.students.repository.StudentRepository;
 

@@ -1,4 +1,4 @@
-package ua.edu.duan.students.dto;
+package ua.edu.duan.dto;
 
 
 import lombok.Getter;
