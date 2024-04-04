@@ -8,6 +8,8 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Timestamp;
+
 @Getter
 @Setter
 @Entity
@@ -20,5 +22,11 @@ public class StudentEntity {
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "registartion_date_time")
+    private Timestamp registrationDateTime;
+
+    @Column(name = "course")
+    private String course;
 
 }
