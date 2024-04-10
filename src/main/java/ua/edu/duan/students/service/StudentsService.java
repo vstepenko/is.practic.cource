@@ -65,6 +65,7 @@ public class StudentsService {
         studentDto.setId(studentEntity.getId());
         studentDto.setName(studentEntity.getName());
         studentDto.setCourse(studentEntity.getCourse());
+        studentDto.setSurname(studentEntity.getSurname());
         studentDto.setRegistrationDateTime(studentEntity.getRegistrationDateTime());
         return studentDto;
     }

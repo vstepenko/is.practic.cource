@@ -21,4 +21,6 @@ public class StudentDto {
     private Timestamp registrationDateTime;
 
     private String course;
+
+    private String surname;
 }

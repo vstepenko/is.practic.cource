@@ -29,4 +29,7 @@ public class StudentEntity {
     @Column(name = "course")
     private String course;
 
+    @Column(name = "surname")
+    private String surname;
+
 }
