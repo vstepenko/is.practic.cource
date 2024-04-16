@@ -4,7 +4,6 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.10.xsd">
-    <include file="db/data/20240410_task1.xml" relativeToChangelogFile="false"/>
-    <include file="db/data/20240410_task2.xml" relativeToChangelogFile="false"/>
-    <include file="db/data/20240416_security.xml" relativeToChangelogFile="false"/>
+
+    <include file="db/data/20240411_practic7.xml" relativeToChangelogFile="false"/>
 </databaseChangeLog>

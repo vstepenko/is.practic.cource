@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet  id="1_init_changeset_answer" author="stepenko" >
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="answers" schemaName="assessment" />
+            </not>
+        </preConditions>
+        <createTable tableName="answers" schemaName="assessment" ifNotExists="true">
+            <column name="id_student" type="VARCHAR">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_question" type="VARCHAR">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="answer" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet  id="2_init_changeset_question" author="stepenko" >
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="question" schemaName="assessment" />
+            </not>
+        </preConditions>
+        <createTable tableName="question" schemaName="assessment">
+            <column name="id" type="VARCHAR">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="desctiption" type="VARCHAR">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="answer" type="BOOLEAN">
+                <constraints nullable="true"/>
+            </column>
+            <column name="couse_code" type="VARCHAR">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet  id="2_init_question_data" author="stepenko" >
+        <insert tableName="question"  schemaName="assessment" >
+            <column name="id" value="2a155fb8-a18b-4045-8727-eeba7cef9621" />
+            <column name="desctiption" value="Do you like Spring Boot?" />
+            <column name="answer" value="true" />
+            <column name="couse_code" value="IS" />
+        </insert>
+
+        <insert tableName="question" schemaName="assessment" >
+            <column name="id" value="e85365dd-ba8d-486a-afa8-a75b8efc1b12" />
+            <column name="desctiption" value="Do like Java?" />
+            <column name="answer" value="true" />
+            <column name="couse_code" value="IS" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>
