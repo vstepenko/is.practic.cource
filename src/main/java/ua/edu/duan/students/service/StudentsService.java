@@ -1,11 +1,12 @@
 package ua.edu.duan.students.service;
 
-import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ua.edu.duan.dto.StudentDto;
 import ua.edu.duan.students.entity.StudentEntity;
+import ua.edu.duan.students.model.exception.BussinessException;
+import ua.edu.duan.students.model.exception.ErrorCode;
 import ua.edu.duan.students.repository.StudentRepository;
 
 
@@ -25,6 +26,9 @@ public class StudentsService {
 
 
     public List<StudentDto> getStudentsByCourse(String course) {
+        if(!"IS".equals(course)) {
+            throw new BussinessException(ErrorCode.COURSE_NOT_FOUND, "Course not found " + course);
+        }
         return  studentRepository.findByCourse(course).stream().map(this::converter).toList();
     }
 
