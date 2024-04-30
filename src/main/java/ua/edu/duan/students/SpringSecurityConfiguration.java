@@ -47,6 +47,7 @@ public class SpringSecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(configurer -> {
+                    configurer.requestMatchers(HttpMethod.GET,"/").hasAnyAuthority("TEACHER", "MANAGER");
                     configurer.requestMatchers(HttpMethod.GET,"/swagger-ui/**").hasAnyAuthority("TEACHER", "MANAGER");
                     configurer.requestMatchers(HttpMethod.GET,"/v3/api-docs/**").hasAnyAuthority("TEACHER", "MANAGER");
                     configurer.requestMatchers(HttpMethod.GET,"/v3/api-docs").hasAnyAuthority("TEACHER", "MANAGER");
