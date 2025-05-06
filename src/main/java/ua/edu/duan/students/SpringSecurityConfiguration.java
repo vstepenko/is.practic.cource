@@ -39,7 +39,7 @@ public class SpringSecurityConfiguration {
     }*/
 
 
-    @Bean
+   /* @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
         return new JdbcUserDetailsManager(dataSource);
     }
@@ -61,6 +61,6 @@ public class SpringSecurityConfiguration {
         http.httpBasic(Customizer.withDefaults());
         http.csrf(AbstractHttpConfigurer::disable);
         return http.build();
-    }
+    }*/
 
 }
